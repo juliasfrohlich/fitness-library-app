@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-homepage',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
+
+  goToWorkoutsPage() {
+    this.navCtrl.navigateRoot("/workouts");
+  }
 
 }

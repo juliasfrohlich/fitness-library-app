@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-workouts',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class WorkoutsPage {
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
+  goToAddWorkoutPage() {
+    this.navCtrl.navigateRoot('/add-workout');
+  }
+  goToUpdateWorkoutPage() {
+    this.navCtrl.navigateRoot('/update-workout');
+  }
 }

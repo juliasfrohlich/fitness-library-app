@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-updateworkoutpage',
   templateUrl: 'update-workout.page.html',
@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class UpdateWorkoutPage {
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
+  goToWorkoutsPage() {
+    this.navCtrl.navigateRoot('/workouts');
+  }
 }

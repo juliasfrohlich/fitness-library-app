@@ -2,36 +2,42 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
   </ion-header>
-
+  <ion-item *ngIf="workout">
     <ion-item style="margin-top: 40px; " lines="none">
       <div class="item-content-big">
-        <ion-input class="select-placeholder" placeholder="Título"></ion-input>
+        <ion-input class="select-placeholder" [(ngModel)]="workoutname" placeholder="Título"></ion-input>
+    </div>
+    </ion-item>
+  </ion-item>
+    <ion-item style="margin-top: 40px; " lines="none">
+      <div class="item-content-big">
+        <ion-input class="select-placeholder" [(ngModel)]="workoutname" placeholder="Título"></ion-input>
     </div>
     </ion-item>
 
     <ion-item style="margin-top: 10px; " lines="none">
       <div class="item-content-big">
-        <ion-input class="select-placeholder" placeholder="Tempo estimado"></ion-input>
+        <ion-input class="select-placeholder" [(ngModel)]="duration" placeholder="Tempo estimado"></ion-input>
     </div>
     </ion-item>
 
-    <ion-item style="margin-top: 15px; " lines="none">
+    <ion-item  style="margin-top: 15px; " lines="none">
       <div class="item-content-small">
-        <ion-input class="select-placeholder" placeholder="Exercício"></ion-input>
-    </div>
-    </ion-item>
-
-    <ion-item style="margin-top: 10px; " lines="none">
-      <div class="item-content-small">
-        <ion-input class="select-placeholder" placeholder="Repetições"></ion-input>
+        <ion-input class="select-placeholder"  placeholder="Exercício"></ion-input>
     </div>
     </ion-item>
 
     <ion-item style="margin-top: 10px; " lines="none">
       <div class="item-content-small">
-        <ion-input class="select-placeholder" placeholder="Peso"></ion-input>
+        <ion-input class="select-placeholder"  placeholder="Repetições"></ion-input>
     </div>
     </ion-item>
+
+    <ion-item style="margin-top: 10px; " lines="none">
+      <div class="item-content-small">
+        <ion-input class="select-placeholder"  placeholder="Peso"></ion-input>
+    </div>
+  </ion-item>
     <ion-item style="margin-top: 10px; "lines="none">
       <ion-grid>
         <ion-row>
@@ -152,11 +158,11 @@
       <ion-grid>
         <ion-row>
             <ion-col size="11" offset="0.5">
-              <ion-button size="large" (click) = "goToAddWorkoutPage()" class="home-button">
+              <ion-button size="large" (click) = "goToWorkoutsPage()" class="home-button">
                 <ion-text color="secondary"><b>Salvar treino</b></ion-text>
               </ion-button>
             </ion-col>
        </ion-row>
-    </ion-grid>
+      </ion-grid>
     </ion-item>
 </ion-content>

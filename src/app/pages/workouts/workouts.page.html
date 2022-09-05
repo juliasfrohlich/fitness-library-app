@@ -1,419 +1,53 @@
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense"> </ion-header>
 
-  </ion-header>
-  <ion-card>
+  <ion-card *ngFor="let workout of workouts" (click)="openWorkout(workout)">
     <ion-card-header>
-      <ion-card-title>Treino A</ion-card-title>
-      <ion-card-subtitle>50-55 minutos</ion-card-subtitle>
-     
+      <ion-list>
+        <ion-card-title>{{workout.workoutname}}</ion-card-title>
+      <ion-card-subtitle>{{workout.duration}}</ion-card-subtitle>
+      </ion-list>
     </ion-card-header>
-  
-    <ion-card-content>
+    <ion-card-content *ngFor="let exercise of workout.exercises" (click)="openExercises(exercise)">
       <ion-grid>
-        <ion-row>
-          <ion-col size="6">
-            Leg Press
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            70kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Agachamento Smith
-         </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            10kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Flexão Quadril
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            8kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Extensor Joelho
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            30kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Cadeira Adutora
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            70kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Panturrilha - Pé
-          </ion-col>
-          <ion-col>
-            4 x 15
-          </ion-col>
-          <ion-col >
-            15kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Abd. Supra
-          </ion-col>
-          <ion-col>
-            4 x 15
-          </ion-col>
-          <ion-col >
-            -
-          </ion-col>
+        <ion-row class="ion-justify-content-between">
+          <ion-col size="6">{{exercise.exercisename}}</ion-col>
+          <ion-col> {{exercise.repetitions}}</ion-col>
+          <ion-col> {{exercise.weight}}</ion-col>
         </ion-row>
       </ion-grid>
-      
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Treino B</ion-card-title>
-      <ion-card-subtitle>60 minutos</ion-card-subtitle>
-     
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="6">
-            Supino Máquina
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            20kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Voador
-         </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            15kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Elevação Frontal
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            4kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Elevação Lateral
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            4kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Tríceps Roldana
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            20kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Tríceps Testa
-          </ion-col>
-          <ion-col>
-            4 x 15
-          </ion-col>
-          <ion-col >
-            10kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Rosca Direta
-          </ion-col>
-          <ion-col>
-            4 x 15
-          </ion-col>
-          <ion-col >
-            10kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Abd. Oblíquo
-          </ion-col>
-          <ion-col>
-            4 x 20
-          </ion-col>
-          <ion-col >
-            -
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Treino C</ion-card-title>
-      <ion-card-subtitle>70 minutos</ion-card-subtitle>
-     
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="6">
-            Flexor Joelho - em Pé
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            15kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Mesa Flexora
-         </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            20kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Cadeira Abdutora
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            70kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Máquina Glúteo
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            20kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Elev. Pélvica
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            80kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Panturilha - Sentado
-          </ion-col>
-          <ion-col>
-            4 x 15
-          </ion-col>
-          <ion-col >
-            15kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Abd. Infra
-          </ion-col>
-          <ion-col>
-            4 x 20
-          </ion-col>
-          <ion-col >
-            -
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Treino D</ion-card-title>
-      <ion-card-subtitle>70 minutos</ion-card-subtitle>
-     
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="6">
-            Puxador Frontal
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            25kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Remada Baixa
-         </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            20kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Desenvolvimento
-          </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            10kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Remata Alta
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            25kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Tríceps Corda
-          </ion-col>
-          <ion-col>
-            4 x 12
-          </ion-col>
-          <ion-col >
-            20kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Rosca Alternada
-          </ion-col>
-          <ion-col>
-            4 x 15
-          </ion-col>
-          <ion-col >
-            10kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Rosca Martelo
-          </ion-col>
-          <ion-col>
-            4 x 20
-          </ion-col>
-          <ion-col >
-            6kg
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            Abd. Hiper
-                    </ion-col>
-          <ion-col>
-            4 x 10
-          </ion-col>
-          <ion-col >
-            -
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      
     </ion-card-content>
   </ion-card>
 
   <ion-item lines="none">
     <ion-grid>
       <ion-row>
-          <ion-col size="11" offset="0.5">
-            <ion-button size="large" (click) = "goToAddWorkoutPage()" class="home-button">
-      
-              <ion-text color="secondary"><b>Adicionar novo treino</b></ion-text>
-            </ion-button>
-            
-          </ion-col>
-     </ion-row>
-  </ion-grid>
+        <ion-col size="11" offset="0.5">
+          <ion-button
+            size="large"
+            (click)="goToAddWorkoutPage()"
+            class="home-button"
+          >
+            <ion-text color="secondary"><b>Adicionar novo treino</b></ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
 
   <ion-item lines="none">
     <ion-grid>
       <ion-row>
-          <ion-col size="11" offset="0.5">
-            <ion-button size="large" (click) = "goToUpdateWorkoutPage()" class="home-button">
-      
-              <ion-text color="secondary"><b>Alterar treino</b></ion-text>
-            </ion-button>
-            
-          </ion-col>
-     </ion-row>
-  </ion-grid>
-  
-  
+        <ion-col size="11" offset="0.5">
+          <ion-button
+            size="large"
+            (click)="goToUpdateWorkoutPage()"
+            class="home-button"
+          >
+            <ion-text color="secondary"><b>Alterar treino</b></ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
-
 </ion-content>

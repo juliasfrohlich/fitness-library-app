@@ -332,3 +332,19 @@
   text-align: center;
   font-weight: bold;
   }
+
+  ion-grid {
+    height: 70%;
+    
+    ion-row {
+      height: 10%;
+    }
+  }
+
+  .bottomRow
+  {
+    padding: 0px;
+    display: border-box;
+  }
+
+  

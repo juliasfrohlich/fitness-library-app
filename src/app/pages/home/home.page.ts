@@ -11,7 +11,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {}
 
   goToWorkoutsPage() {
-    this.navCtrl.navigateRoot("/workouts");
+    this.navCtrl.navigateRoot('/workouts');
   }
 
 }
